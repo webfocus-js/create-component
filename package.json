@@ -1,0 +1,17 @@
+{
+    "name": "@webfocus/create-component",
+    "version": "0.0.1",
+    "description": "Generator for components using the webfocus framework.",
+    "main": "index.js",
+    "bin":{
+      "create-webfocus-app": "index.js"
+    },
+    "repository": "webfocus-js/create-component",
+    "keywords": [
+      "webfocus",
+      "component"
+    ],
+    "author": "Diogo Almiro",
+    "license": "MIT"
+  }
+  
