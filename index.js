@@ -32,19 +32,14 @@ const packageTemplateObj = {
     "main": "index.js",
     "keywords": [],
     "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "@webfocus/component": "^0.0.1",
-    }
+    "license": "ISC"
 };
-
-(async () => {
-    let name = await input('Insert component name> ');
-    let description = await input('Insert component description> ');
-
+input("Component Name: ").then(name => {
+    let description = await input('Component Description: ')
+    
     // Create index.js file
     fs.writeFileSync('index.js', indexTemplate(name, description), {flag:'wx'});
-
+    
     // Create package.js file
     packageTemplateObj.name = name.toLowerCase().split(' ').join('-');
     fs.writeFileSync('package.json', JSON.stringify(packageTemplateObj, null, '  '), {flag:'wx'});
@@ -52,7 +47,9 @@ const packageTemplateObj = {
     // Create index.pug file
     fs.writeFileSync('index.pug', indexPugTemplate, {flag:'wx'})
 
-    return 0
-})()
-    .catch(e => {console.error(e); return 1})
-    .finally(r => process.exit(r))
+    // Install dependencies
+    child_process.execSync('npm install @webfocus/component')
+    return 0;
+})
+.catch(e => {console.error(e); return 1})
+.finally(r => process.exit(r))
