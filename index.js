@@ -34,7 +34,7 @@ const packageTemplateObj = {
     "author": "",
     "license": "ISC"
 };
-input("Component Name: ").then(name => {
+input("Component Name: ").then(async name => {
     let description = await input('Component Description: ')
     
     // Create index.js file
