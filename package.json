@@ -1,6 +1,6 @@
 {
     "name": "@webfocus/create-component",
-    "version": "0.1.4",
+    "version": "1.0.0",
     "description": "Generator for components using the webfocus framework.",
     "main": "index.js",
     "bin": {
